@@ -78,7 +78,7 @@ def append_current_offer(insomnia_info=None):
 
     # append current offer to file
     with open(offers_file, 'a', encoding='utf-8') as f:
-        f.write('\n%d. [b][url=%s]%s[/url][/b] [%s %s -> %s (-%s%%), %s copies]\n' % (
+        f.write('\n%d. [b][url=%s]%s[/url][/b] [%s %s -> %s (-%s%%), ?/%s sold]\n' % (
             counter, product['store'], product['title'], offer['currencyCode'], offer['basePrice'],
             offer['finalPrice'], offer['discount'], offer['maxQuantity']))
 
@@ -119,7 +119,7 @@ def print_offer_details(upcoming_offers=None):
         if len(upcoming_offers) > 1:
             print('!! Multiple possible upcoming offer guesses available !!')
         for offer in upcoming_offers:
-            print('%d. [b][url=%s]%s[/url][/b] [%s -> $? (-?%%), ? copies]' % (
+            print('%d. [b][url=%s]%s[/url][/b] [%s -> $? (-?%%), ?/? sold]' % (
                 counter, 'https://www.gog.com/en/game/'+offer['slug'].replace('-', '_'),
                 offer['title'], offer['price']['base']))
 
