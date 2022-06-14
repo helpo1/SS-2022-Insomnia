@@ -78,7 +78,7 @@ def append_current_offer(insomnia_info=None):
 
     # append current offer to file
     with open(offers_file, 'a', encoding='utf-8') as f:
-        f.write('\n%d. [b][url=%s]%s[/url][/b] [%s %s -> %s (-%s%%), %s copies]' % (
+        f.write('\n%d. [b][url=%s]%s[/url][/b] [%s %s -> %s (-%s%%), %s copies]\n' % (
             counter, product['store'], product['title'], offer['currencyCode'], offer['basePrice'],
             offer['finalPrice'], offer['discount'], offer['maxQuantity']))
 
