@@ -62,15 +62,14 @@ def append_current_offer(insomnia_info=None):
     offer = insomnia_info['insomniaDetails']
     product = offer['product']
 
-    with open(offers_file, 'r', encoding='utf-8') as f:
-        if product['store'] in f.read():
-            # print('Product already in offers, returning')
-            return
-        else:
-            # print('Product not in offers, adding')
-            pass
-
     neg_counter, last_line = read_last_offer()
+    if '[url=' + product['store'] + ']' in last_line:
+        # print('Product already in offers, returning')
+        return
+    else:
+        # print('Product not in offers, adding')
+        pass
+
     if not neg_counter < 0:
         counter = 1
     else:
